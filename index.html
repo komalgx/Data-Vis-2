@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Call this "RAINFALL" or "climate" whatever-->
+  <title>DATAVIS2 - Rainfall yuh</title>
+
+  <!-- Loading necessary Vega and Vega-Lite libraries in the browser-->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+</head>
+<body>
+
+  <h1>RAINFALL</h1>
+
+  <!-- Container where your first visualization will be embedded
+   what should these be called? is there a specific naming convention? -->
+  <div id="vis1"></div>
+
+  <script type="text/javascript">
+    // Visualization 1: Embed your Vega-Lite JSON
+    vegaEmbed('#vis1', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/visualization.vl%20(1).json').then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
+  </script>
+
+</body>
+</html>
