@@ -6,7 +6,7 @@
     "format": {"type": "csv"}
   },
   "height": 250,
-  "width": 450,
+  "width": 250,
   "mark": "line",
   "encoding": {
     "x": {"field": "Date", "type": "temporal", "title": "Date"},
