@@ -5,8 +5,8 @@
     "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/weatherAUS.csv",
     "format": {"type": "csv"}
   },
-  "height": 300,
-  "width": 600,
+  "height": 250,
+  "width": 450,
   "mark": "line",
   "encoding": {
     "x": {"field": "Date", "type": "temporal", "title": "Date"},
