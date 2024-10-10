@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bubble chart for native forest areas by forest type and state.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/native_forest_area.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "State", "type": "nominal", "title": "State"},
+    "y": {"field": "Forest Type", "type": "nominal", "title": "Forest Type"},
+    "size": {
+      "field": "Area",
+      "type": "quantitative",
+      "title": "Forest Area ('000 ha)"
+    },
+    "color": {
+      "field": "Forest Type",
+      "type": "nominal",
+      "title": "Forest Type",
+      "legend": null
+    }
+  },
+  "transform": [
+    {
+      "fold": ["NSW", "Vic.", "Qld", "SA", "WA", "Tas.", "NT", "ACT"],
+      "as": ["State", "Area"]
+    }
+  ],
+  "config": {}
+}
