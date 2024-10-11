@@ -1,17 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Bar chart showing hardwood and softwood plantation areas by state.",
+  "description": "Dynamic stacked bar chart showing plantation areas by state, type, and year.",
   "data": {
-    "values": [
-      {"State": "NSW", "Hardwood": 93, "Softwood": 296.2},
-      {"State": "VIC", "Hardwood": 206.6, "Softwood": 225.9},
-      {"State": "QLD", "Hardwood": 41.4, "Softwood": 189.4},
-      {"State": "SA", "Hardwood": 59.7, "Softwood": 128.5},
-      {"State": "WA", "Hardwood": 301, "Softwood": 98.4},
-      {"State": "TAS", "Hardwood": 235.6, "Softwood": 75.1},
-      {"State": "NT", "Hardwood": 39.4, "Softwood": 2.4},
-      {"State": "ACT", "Hardwood": 0, "Softwood": 7.7}
-    ]
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/dynamic_plantation_years.csv",
+    "format": {"type": "csv"}
   },
   "transform": [
     {
@@ -19,19 +11,40 @@
       "as": ["Plantation Type", "Plantation Area"]
     }
   ],
+  "selection": {
+    "yearSelect": {
+      "type": "single",
+      "fields": ["Year"],
+      "bind": {
+        "input": "select",
+        "options": ["2011-12", "2012-13", "2013-14"],  // Add more years as needed
+        "name": "Select Year: "
+      }
+    }
+  },
   "mark": "bar",
   "encoding": {
-    "x": {"field": "State", "type": "nominal", "title": "State"},
+    "x": {
+      "field": "State",
+      "type": "nominal",
+      "title": "State"
+    },
     "y": {
       "field": "Plantation Area",
       "type": "quantitative",
-      "title": "Plantation Area ('000 ha)"
+      "title": "Total Plantation Area ('000 ha)"
     },
     "color": {
       "field": "Plantation Type",
       "type": "nominal",
       "title": "Plantation Type"
+    },
+    "opacity": {
+      "condition": {
+        "selection": "yearSelect",
+        "value": 1
+      },
+      "value": 0.2
     }
-  },
-  "config": {}
+  }
 }
