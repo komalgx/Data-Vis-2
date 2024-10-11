@@ -1,4 +1,9 @@
-﻿Years,Plantation type,Units,,,,,,,,
-,,,NSW,VIC,QLD,SA,WA,TAS,NT,ACT
-2011–12,Hardwood,’000 ha,93.0,206.6,41.4,59.7,301.0,235.6,39.4,0.0
-2011–12,Softwood,’000 ha,296.2,225.9,189.4,128.5,98.4,75.1,2.4,7.7
+State,	Hardwood,	Softwood
+NSW,	93.0,	296.2
+VIC,	206.6,	225.9
+QLD,	41.4,	189.4
+SA,	59.7,	128.5
+WA,	301.0,	98.4
+TAS,	235.6,	75.1
+NT,	39.4,	2.4
+ACT,	0.0,	7.7
