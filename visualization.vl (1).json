@@ -13,7 +13,7 @@
     "y": {
       "field": "MaxTemp",
       "type": "quantitative",
-      "title": "Maximum Temperature (°C)"
+      "title": "Maximum difference in foreast area ('000 ha)"
     },
     "color": {"value": "steelblue"}
   },
