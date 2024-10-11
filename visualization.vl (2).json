@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked bar chart showing plantation areas by state, type, and year.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/plantation_updated.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "fold": [
+        "2001–02",
+        "2002–03",
+        "2003–04",
+        "2004–05",
+        "2005–06",
+        "2006–07",
+        "2007–08",
+        "2008–09",
+        "2009–10",
+        "2010–11",
+        "2011–12",
+        "2012–13",
+        "2013–14",
+        "2014–15",
+        "2015–16",
+        "2016–17",
+        "2017–18",
+        "2018–19",
+        "2019–20",
+        "2020–21"
+      ],
+      "as": ["Year", "Plantation Area"]
+    },
+    {
+      "calculate": "toNumber(replace(datum['Plantation Area'], ',', ''))",
+      "as": "Plantation Area"
+    },
+    {"filter": "datum['Plantation Area'] > 0"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+    "y": {
+      "aggregate": "sum",
+      "field": "Plantation Area",
+      "type": "quantitative",
+      "title": "Total Plantation Area ('000 ha)"
+    },
+    "color": {
+      "field": "Plantation Type",
+      "type": "nominal",
+      "title": "Plantation Type"
+    },
+    "column": {"field": "State", "type": "nominal", "title": "State"}
+  },
+  "config": {}
+}
