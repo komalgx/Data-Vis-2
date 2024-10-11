@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart showing hardwood and softwood plantation areas by state.",
+  "data": {
+    "values": [
+      {"State": "NSW", "Hardwood": 93, "Softwood": 296.2},
+      {"State": "VIC", "Hardwood": 206.6, "Softwood": 225.9},
+      {"State": "QLD", "Hardwood": 41.4, "Softwood": 189.4},
+      {"State": "SA", "Hardwood": 59.7, "Softwood": 128.5},
+      {"State": "WA", "Hardwood": 301, "Softwood": 98.4},
+      {"State": "TAS", "Hardwood": 235.6, "Softwood": 75.1},
+      {"State": "NT", "Hardwood": 39.4, "Softwood": 2.4},
+      {"State": "ACT", "Hardwood": 0, "Softwood": 7.7}
+    ]
+  },
+  "transform": [
+    {
+      "fold": ["Hardwood", "Softwood"],
+      "as": ["Plantation Type", "Plantation Area"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "State", "type": "nominal", "title": "State"},
+    "y": {
+      "field": "Plantation Area",
+      "type": "quantitative",
+      "title": "Plantation Area ('000 ha)"
+    },
+    "color": {
+      "field": "Plantation Type",
+      "type": "nominal",
+      "title": "Plantation Type"
+    }
+  },
+  "config": {}
+}
