@@ -21,38 +21,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Adding CSS for padding -->
+  <style>
+    body {
+      padding: 20px; /* Adds padding to the whole page */
+      font-family: 'Roboto', sans-serif;
+    }
 
+    h1 {
+      padding: 20px 0; /* Adds space above and below the title */
+      font-family: 'Salsa', cursive;
+      font-size: 2em;
+      color: #333;
+      text-align: center;
+    }
+
+    p {
+      padding: 10px 20px; /* Adds padding around the paragraph */
+      line-height: 1.5;
+    }
+
+    #vis1, #vis2, #vis3, #vis4 {
+      padding: 20px 0; /* Adds space between visualizations */
+    }
+  </style>
 </head>
 <body>
 
   <h1 class="salsa-regular">EXPLORING AUSTRALIA'S FORESTS</h1>
-  <!--<p class="salsa-regular">This paragraph is also using the Salsa font.</p>-->
-  <body >This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</body>
+  
+  <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</p>
 
-
-  <!-- Container where your first visualization will be embedded
-   what should these be called? is there a specific naming convention? -->
+  <!-- Containers for visualizations -->
   <div id="vis1"></div>
   <div id="vis2"></div>
   <div id="vis3"></div>
   <div id="vis4"></div>
 
+  <!-- Embedding the Vega-Lite visualizations -->
   <script type="text/javascript">
     // Visualization 1: Embed your Vega-Lite JSON
     vegaEmbed('#vis1', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/native_forest_area%20bubble%20chart.json').then(function(result) {
       // Access the Vega view instance as result.view
     }).catch(console.error);
     
-    vegaEmbed('#vis2','https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/visualization.vl%20(1).json').then(function(result){  
+    vegaEmbed('#vis2', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/visualization.vl%20(1).json').then(function(result){  
     }).catch(console.error);
     
-    vegaEmbed('#vis3','https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/visualization.vl%20(2).json').then(function(result){
+    vegaEmbed('#vis3', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/visualization.vl%20(2).json').then(function(result){
     }).catch(console.error);
 
-    vegaEmbed('#vis4','https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/annual_plantation_stacked_bar_chart.vl.json').then(function(result){
+    vegaEmbed('#vis4', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/annual_plantation_stacked_bar_chart.vl.json').then(function(result){
     }).catch(console.error);
-
-    
   </script>
 
 </body>
