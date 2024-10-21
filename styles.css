@@ -29,4 +29,19 @@ h1 {
     font-weight: 400;
     font-style: normal;
   }
+
+/* Padding on all sides */
+.content {
+  padding: 20px; /* Adds 20px padding to the top, right, bottom, and left */
+  background-color: lightgray;
+}
+
+/* Padding can also be set for individual sides */
+.content {
+  padding-top: 10px;    /* 10px padding on the top */
+  padding-right: 15px;  /* 15px padding on the right */
+  padding-bottom: 20px; /* 20px padding on the bottom */
+  padding-left: 25px;   /* 25px padding on the left */
+}
+
   
