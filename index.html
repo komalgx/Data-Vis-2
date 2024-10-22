@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Adding CSS for layout, header, footer, and padding -->
+  <!-- Adding CSS for full-height sections -->
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -29,26 +29,28 @@
       overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
-    /* Container to set the maximum width for all content */
-    .container {
-      max-width: 1200px; /* Set a maximum width for larger screens */
-      margin: 0 auto; /* Center the container */
-      padding: 20px; /* General padding for the container */
+    /* Full-screen sections for each visualization */
+    .section {
+      height: 100vh; /* 100% of the viewport height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     /* Header and Footer styles */
     .header, .footer {
-      background-color: #333; /* Dark background for contrast */
-      color: white;          /* White text for visibility */
+      background-color: #333;
+      color: white;
       padding: 20px;
       text-align: center;
     }
 
     .footer {
-      margin-top: 40px; /* Extra spacing before footer */
+      margin-top: 40px;
     }
 
-    /* Content styling */
     h1 {
       padding: 20px 0;
       font-family: 'Salsa', cursive;
@@ -62,17 +64,8 @@
       line-height: 1.5;
     }
 
-    /* Visualizations styling */
-    #vis1, #vis2, #vis3, #vis4 {
-      padding: 20px 0;
-    }
-
-    /* Media query to adjust padding for smaller devices */
+    /* Adjustments for smaller screens */
     @media (max-width: 600px) {
-      .container {
-        padding: 10px; /* Less padding on smaller screens */
-      }
-
       h1 {
         font-size: 1.5em;
       }
@@ -85,27 +78,23 @@
 </head>
 <body>
 
-  <div class="container">
-    <!-- Header Section -->
-    <div class="header">
-      <h2>AUSTRALIA'S FOREST DATA VISUALIZATION</h2>
-      <p>Exploring the Data Behind the Forests</p>
-    </div>
+  <div class="header">
+    <h2>AUSTRALIA'S FOREST DATA VISUALIZATION</h2>
+    <p>Exploring the Data Behind the Forests</p>
+  </div>
 
-    <h1>EXPLORING AUSTRALIA'S FORESTS</h1>
-    
-    <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</p>
+  <h1>EXPLORING AUSTRALIA'S FORESTS</h1>
+  
+  <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</p>
 
-    <!-- Containers for visualizations -->
-    <div id="vis1"></div>
-    <div id="vis2"></div>
-    <div id="vis3"></div>
-    <div id="vis4"></div>
+  <!-- Full-height container for each visualization -->
+  <div class="section" id="vis1"></div>
+  <div class="section" id="vis2"></div>
+  <div class="section" id="vis3"></div>
+  <div class="section" id="vis4"></div>
 
-    <!-- Footer Section -->
-    <div class="footer">
-      <p>&copy; 2024 Australia's Forests Data Visualization | All Rights Reserved</p>
-    </div>
+  <div class="footer">
+    <p>&copy; 2024 Australia's Forests Data Visualization | All Rights Reserved</p>
   </div>
 
   <!-- Embedding the Vega-Lite visualizations -->
