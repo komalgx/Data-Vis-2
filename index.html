@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Call this "RAINFALL" or "climate" whatever-->
   <title>DATA VIS 2a</title>
 
   <!-- Loading necessary Vega and Vega-Lite libraries in the browser-->
@@ -15,21 +14,35 @@
   <!-- Link to External CSS File -->
   <link rel="stylesheet" href="styles.css"> 
 
-  <!-- Link to Google Fonts - custom font for title -->
+  <!-- Link to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Adding CSS for padding -->
+  <!-- Adding CSS for header, footer, and padding -->
   <style>
     body {
-      padding: 20px; /* Adds padding to the whole page */
+      padding: 20px;
       font-family: 'Roboto', sans-serif;
+      margin: 0;
     }
 
+    /* Header and Footer styles */
+    .header, .footer {
+      background-color: #333; /* Dark background for contrast */
+      color: white;          /* White text for visibility */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 40px; /* Extra spacing before footer */
+    }
+
+    /* Content styling */
     h1 {
-      padding: 20px 0; /* Adds space above and below the title */
+      padding: 20px 0;
       font-family: 'Salsa', cursive;
       font-size: 2em;
       color: #333;
@@ -37,18 +50,25 @@
     }
 
     p {
-      padding: 10px 20px; /* Adds padding around the paragraph */
+      padding: 10px 20px;
       line-height: 1.5;
     }
 
+    /* Visualizations styling */
     #vis1, #vis2, #vis3, #vis4 {
-      padding: 20px 0; /* Adds space between visualizations */
+      padding: 20px 0;
     }
   </style>
 </head>
 <body>
 
-  <h1 class="salsa-regular">EXPLORING AUSTRALIA'S FORESTS</h1>
+  <!-- Header Section -->
+  <div class="header">
+    <h2>AUSTRALIA'S FOREST DATA VISUALIZATION</h2>
+    <p>Exploring the Data Behind the Forests</p>
+  </div>
+
+  <h1>EXPLORING AUSTRALIA'S FORESTS</h1>
   
   <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</p>
 
@@ -58,11 +78,14 @@
   <div id="vis3"></div>
   <div id="vis4"></div>
 
+  <!-- Footer Section -->
+  <div class="footer">
+    <p>&copy; 2024 Australia's Forests Data Visualization | All Rights Reserved</p>
+  </div>
+
   <!-- Embedding the Vega-Lite visualizations -->
   <script type="text/javascript">
-    // Visualization 1: Embed your Vega-Lite JSON
     vegaEmbed('#vis1', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/native_forest_area%20bubble%20chart.json').then(function(result) {
-      // Access the Vega view instance as result.view
     }).catch(console.error);
     
     vegaEmbed('#vis2', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/visualization.vl%20(1).json').then(function(result){  
