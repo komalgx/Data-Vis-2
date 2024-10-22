@@ -20,12 +20,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Adding CSS for header, footer, and padding -->
+  <!-- Adding CSS for layout, header, footer, and padding -->
   <style>
     body {
-      padding: 20px;
       font-family: 'Roboto', sans-serif;
       margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Container to set the maximum width for all content */
+    .container {
+      max-width: 1200px; /* Set a maximum width for larger screens */
+      margin: 0 auto; /* Center the container */
+      padding: 20px; /* General padding for the container */
     }
 
     /* Header and Footer styles */
@@ -58,29 +66,46 @@
     #vis1, #vis2, #vis3, #vis4 {
       padding: 20px 0;
     }
+
+    /* Media query to adjust padding for smaller devices */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px; /* Less padding on smaller screens */
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p {
+        padding: 5px 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
-  <div class="header">
-    <h2>AUSTRALIA'S FOREST DATA VISUALIZATION</h2>
-    <p>Exploring the Data Behind the Forests</p>
-  </div>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <h2>AUSTRALIA'S FOREST DATA VISUALIZATION</h2>
+      <p>Exploring the Data Behind the Forests</p>
+    </div>
 
-  <h1>EXPLORING AUSTRALIA'S FORESTS</h1>
-  
-  <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</p>
+    <h1>EXPLORING AUSTRALIA'S FORESTS</h1>
+    
+    <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</p>
 
-  <!-- Containers for visualizations -->
-  <div id="vis1"></div>
-  <div id="vis2"></div>
-  <div id="vis3"></div>
-  <div id="vis4"></div>
+    <!-- Containers for visualizations -->
+    <div id="vis1"></div>
+    <div id="vis2"></div>
+    <div id="vis3"></div>
+    <div id="vis4"></div>
 
-  <!-- Footer Section -->
-  <div class="footer">
-    <p>&copy; 2024 Australia's Forests Data Visualization | All Rights Reserved</p>
+    <!-- Footer Section -->
+    <div class="footer">
+      <p>&copy; 2024 Australia's Forests Data Visualization | All Rights Reserved</p>
+    </div>
   </div>
 
   <!-- Embedding the Vega-Lite visualizations -->
