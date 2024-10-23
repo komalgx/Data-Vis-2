@@ -14,16 +14,68 @@
       }
     }
   ],
-  "transform": [{"filter": "datum['Forest Type'] == forestType"}],
-  "mark": "line",
-  "encoding": {
-    "x": {"field": "Year", "type": "temporal", "axis": {"title": "Year"}},
-    "y": {
-      "field": "Forest Area (ha)",
-      "type": "quantitative",
-      "axis": {"title": "Forest Area (ha)"}
+  "transform": [
+    {
+      "filter": "datum['Forest Type'] == forestType"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "field": "Forest Area (ha)",
+          "type": "quantitative",
+          "axis": {"title": "Forest Area ('000 ha)"}
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "New South Wales", "Victoria", "Queensland", 
+              "South Australia", "Western Australia", 
+              "Tasmania", "Northern Territory", "ACT"
+            ],
+            "range": [
+              "#006400", "#228B22", "#32CD32",  // Dark green, bright green, light green
+              "black", "grey", "#800000",       // Black, grey, maroon
+              "#8B4513", "#D3D3D3"              // Brown, light grey
+            ]
+          }
+        }
+      }
     },
-    "color": {"field": "State", "type": "nominal"}
-  },
-  "config": {}
+    {
+      "mark": {
+        "type": "point",
+        "opacity": 0,  // Invisible points
+        "size": 100  // Increase point size to make hovering easier
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Forest Area (ha)",
+          "type": "quantitative"
+        },
+        "tooltip": [  
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "Forest Type", "type": "nominal", "title": "Forest Type"},
+          {"field": "Year", "type": "temporal", "title": "Year"},
+          {"field": "Forest Area (ha)", "type": "quantitative", "title": "Forest Area ('000 ha)"}
+        ]
+      }
+    }
+  ]
 }
