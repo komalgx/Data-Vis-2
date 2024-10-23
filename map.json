@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+    "format": {"property": "features", "type": "json"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "values": [
+            {"state": "New South Wales", "value": 500, "extra": "fun fact"},
+            {"state": "Victoria", "value": 400, "extra": "fun fact"},
+            {"state": "Queensland", "value": 600, "extra": "fun fact"},
+            {"state": "South Australia", "value": 300, "extra": "fun fact"},
+            {"state": "Western Australia", "value": 700, "extra": "fun fact"},
+            {"state": "Tasmania", "value": 200, "extra": "fun fact"},
+            {"state": "Northern Territory", "value": 100, "extra": "fun fact"}
+          ]
+        },
+        "key": "state",
+        "fields": ["value", "extra"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Forest Area (ha)",
+      "scale": {"scheme": "greens"}
+    },
+    "tooltip": [
+      {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+      {"field": "value", "type": "quantitative", "title": "Value"},
+      {"field": "extra", "type": "nominal", "title": "Description"}
+    ]
+  },
+  "config": {}
+}

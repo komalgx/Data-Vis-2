@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/DV2_TimeSeriesData_A.csv"
+  },
+  "params": [
+    {
+      "name": "forestType",
+      "value": "Hardwood",
+      "bind": {
+        "input": "select",
+        "options": ["Softwood", "Hardwood"],
+        "name": "Select Forest Type: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum['Forest Type'] == forestType"}],
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "axis": {"title": "Year"}},
+    "y": {
+      "field": "Forest Area (ha)",
+      "type": "quantitative",
+      "axis": {"title": "Forest Area (ha)"}
+    },
+    "color": {"field": "State", "type": "nominal"}
+  },
+  "config": {}
+}
