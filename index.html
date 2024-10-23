@@ -91,6 +91,8 @@
   <div class="section" id="vis2"></div>
   <div class="section" id="vis3"></div>
   <div class="section" id="vis4"></div>
+  <div class="section" id="vis5"></div>
+  <div class="section" id="vis6"></div>
 
   <div class="footer">
     <p>Data Visualisation 2 Assignment | Author: Komal Gupta | Date: 22/10/2024</p>
@@ -109,6 +111,12 @@
     }).catch(console.error);
 
     vegaEmbed('#vis4', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/annual_plantation_stacked_bar_chart.vl.json').then(function(result){
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/TimeSeries_ForestType.json').then(function(result){
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', 'https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/map.json').then(function(result){
     }).catch(console.error);
   </script>
 
